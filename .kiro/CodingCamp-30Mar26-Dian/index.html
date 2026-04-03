@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense & Budget Visualizer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+
+    <!-- 🔥 HEADER TOP (TITLE + TOGGLE) -->
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h1>Expense & Budget Visualizer</h1>
+
+      <!-- DARK MODE TOGGLE -->
+      <button id="themeToggle">🌙</button>
+    </div>
+
+    <p>Total Spending: <span id="balance">$0.00</span></p>
+  </div>
+
+  <!-- ADD TRANSACTION -->
+  <div class="card center-card">
+    <h3>Add Transaction</h3>
+
+    <div class="form-row">
+      <input id="text" placeholder="Item Name">
+      <input id="amount" type="number" placeholder="Amount">
+
+      <select id="category"></select>
+
+      <button id="addBtn">Add Transaction</button>
+    </div>
+
+    <!-- CUSTOM CATEGORY -->
+    <div class="form-row">
+      <input id="newCategory" placeholder="New Category">
+      <button id="addCategoryBtn">Add Category</button>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="grid">
+
+    <!-- CHART -->
+    <div class="card">
+      <h3>Spending Distribution</h3>
+      <canvas id="chart"></canvas>
+    </div>
+
+    <!-- LIST -->
+    <div class="card">
+
+      <!-- HEADER + FILTER -->
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3>Transaction History</h3>
+
+        <select id="filterCategory">
+          <option value="All">All</option>
+        </select>
+      </div>
+
+      <ul id="list"></ul>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
